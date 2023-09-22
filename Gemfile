@@ -19,7 +19,6 @@ gem 'cancancan'
 
 # NEW GEMS ***
 
-
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 
