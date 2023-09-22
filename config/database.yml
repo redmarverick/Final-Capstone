@@ -6,12 +6,11 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
   user: postgres
-  password: 12345
+  password: 123
 
 development:
   <<: *default
   database: Final_Capstone_Backend
-
 
 test:
   <<: *default
