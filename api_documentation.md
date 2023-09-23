@@ -1,6 +1,4 @@
 <div class="markdown prose w-full break-words dark:prose-invert light">
-   <p>Creating comprehensive API documentation typically involves several steps and tools. While I can provide you with a basic template for documenting your API endpoints, it's important to note that creating extensive and well-organized documentation often requires specialized tools like Swagger, Postman, or dedicated API documentation platforms like Apiary, OpenAPI, or Swagger UI.</p>
-   <p>Here's a basic template for documenting your API endpoints:</p>
    <h1>API Documentation</h1>
    <h2>Introduction</h2>
    <p>This documentation provides information about the endpoints and functionality of our API.</p>
