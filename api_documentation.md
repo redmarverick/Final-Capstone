@@ -86,7 +86,7 @@
 <h4>User Logout</h4>
    <ul>
       <li><strong>Endpoint</strong>: <code>/api/logout</code></li>
-      <li><strong>Method</strong>: <code>POST</code></li>
+      <li><strong>Method</strong>: <code>DELETE</code></li>
       <li><strong>Description</strong>: Log out current user and destroy the authentication token.</li>
       <li>
          <strong>Parameters</strong>:
