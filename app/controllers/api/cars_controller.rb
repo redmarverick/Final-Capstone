@@ -1,6 +1,6 @@
 class Api::CarsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create, :show, :update, :destroy]
-  before_action :find_car, only: [:show, :update, :destroy]
+  before_action :find_car, only: [:create, :show, :update, :destroy]
 
   def index
     @cars = Car.all
@@ -21,8 +21,11 @@ class Api::CarsController < ApplicationController
   end
 
   def update
-    if @car.update(car_params)
-      render json: @car
+    field_name = params[:field_name]
+    new_value = params[:new_value]
+
+    if @car.update(field_name => new_value)
+      render json: { message: 'Information updated successfully' }
     else
       render json: @car.errors, status: :unprocessable_entity
     end
@@ -36,7 +39,7 @@ class Api::CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:name, :description, :photo, :reserved)
+    params.require(:car).permit(:name, :description, :photo, :reserved, :price)
   end
 
   def find_car

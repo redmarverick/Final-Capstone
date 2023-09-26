@@ -6,7 +6,7 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: postgres
-  password: 123
+  password: 12345
   #this password will be used for all environments, as it is defined on default, you don't need to define again
 
 development:
