@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       post 'password/forgot', to: 'passwords#forgot' # This route is for initiating password reset
       put 'password/reset', to: 'passwords#reset'     # This route is for resetting the password
     end
+    resources :cars, only: [:index, :show, :create, :update, :destroy]
   end
 
   root 'root#index'
