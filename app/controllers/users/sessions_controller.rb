@@ -5,6 +5,8 @@ class Users::SessionsController < Devise::SessionsController
   def respond_with(resource, _opts = {})
     if resource.persisted?
       render json: { status: 200, user: resource, message: 'Logged in Successfully' }
+    else
+      render json: { message: 'Invalid email or password' }, status: :unprocessable_entity
   end
 
   def destroy
