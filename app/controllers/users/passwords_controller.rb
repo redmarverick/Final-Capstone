@@ -1,4 +1,4 @@
-class Api::PasswordsController < Devise::PasswordsController
+class Users::PasswordsController < Devise::PasswordsController
   skip_before_action :verify_authenticity_token, only: [:forgot, :reset]
   # POST /resource/password/forgot
   def forgot
