@@ -9,9 +9,4 @@ class Users::SessionsController < Devise::SessionsController
       render json: { message: 'Invalid email or password' }, status: :unprocessable_entity
     end
   end
-
-  def destroy
-    sign_out(current_user)
-    render json: { message: 'Logged off successfully.' }
-  end
 end
