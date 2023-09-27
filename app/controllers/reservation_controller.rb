@@ -15,4 +15,13 @@ class ReservationController < ApplicationController
   end
   def show
     render json: @reserved, status: :ok
+  end
+
+  def update
+    if @reserved.update(reservation_params)
+      render json: { message: 'Reservation updated successfully' }, status: :ok
+    else
+      render json: { error: @reserved.errors.full_messages }
+    end
+  end
 end
