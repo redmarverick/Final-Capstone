@@ -7,6 +7,10 @@ class ReservationController < ApplicationController
   end
   def create
     @reserved = Reservation.new(reservation_params)
-    
+    if @reserved.save
+      render json:{message: 'car reserved'}
+    else
+      render json:{error: @reserved.errors.full_messages}
+    end
   end
 end
