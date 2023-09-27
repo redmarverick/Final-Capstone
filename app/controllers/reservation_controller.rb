@@ -13,5 +13,6 @@ class ReservationController < ApplicationController
       render json:{error: @reserved.errors.full_messages}
     end
   end
-
+  def show
+    render json: @reserved, status: :ok
 end
