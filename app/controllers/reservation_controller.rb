@@ -4,7 +4,7 @@ class ReservationController < ApplicationController
   before_action :set_reserved, only: [:show, :update, :destroy]
 
   def index
-    @reservations = Reservation.where(user_id: params[:user_id])
+    @reservations = current_user.reservations.all
     render json: { cars_reservations: @reservations }
   end
 
