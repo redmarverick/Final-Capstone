@@ -1,4 +1,4 @@
-class Api::CarsController < ApplicationController
+class Users::CarsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create, :show, :update, :destroy]
   before_action :find_car, only: [:create, :show, :update, :destroy]
 
