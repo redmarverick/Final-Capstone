@@ -1,11 +1,15 @@
-class ReservationController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: [:create]
-  before_action :authenticate_user!, only: [:index]
+class ReservationsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+  #before_action :authenticate_user!, only: [:index]
   before_action :set_reserved, only: [:show, :update, :destroy]
 
   def index
-    @reservations = Reservation.where(user_id: params[:user_id])
-    render json: { cars_reservations: @reservations }
+    if current_user
+      @reservations = current_user.reservations.all
+      render json: { cars_reservations: @reservations }
+    else
+      render json: {message: "Please Login"}
+    end
   end
 
   def create
