@@ -24,4 +24,11 @@ class ReservationController < ApplicationController
       render json: { error: @reserved.errors.full_messages }
     end
   end
+
+  def destroy
+    if @reserved.destroy
+      render json: { message: 'Reservation deleted successfully' }
+    else
+      render json: { errors: @reserved.errors.full_messages }
+    end
 end
