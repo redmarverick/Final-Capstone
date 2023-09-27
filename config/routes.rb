@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   resources :reservations, only: [:index, :create]
   resources :cars, only: [:index, :show, :create, :update, :destroy]
 
-  root 'root#index'
+  root 'root#index' 
 end
