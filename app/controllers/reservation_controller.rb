@@ -5,4 +5,8 @@ class ReservationController < ApplicationController
     @reservations = Reservation.find_by(user_id: params[:user_id])
     render json: {cars_reservations: @reservations}
   end
+  def create
+    @reserved = Reservation.new(reservation_params)
+    
+  end
 end
