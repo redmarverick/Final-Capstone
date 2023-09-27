@@ -31,4 +31,10 @@ class ReservationController < ApplicationController
     else
       render json: { errors: @reserved.errors.full_messages }
     end
+  end
+  
+private
+  def reservation_params
+    params.require(:reservation).permit(:user_id, :car_id, :city, :date)
+  end
 end
