@@ -1,6 +1,6 @@
-class Api::SessionsController < Devise::SessionsController
-  skip_before_action :verify_authenticity_token
+class Users::SessionsController < Devise::SessionsController
   respond_to :json
+  skip_before_action :verify_authenticity_token
 
   def create
     self.resource = warden.authenticate!(auth_options)
