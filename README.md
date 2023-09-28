@@ -105,6 +105,12 @@ To run the project tests, execute the following command:
 - Twitter: [@javedshahbaz007](https://twitter.com/javedshahbaz007)
 - LinkedIn: [@javedshahbaz](https://www.linkedin.com/in/javedshahbaz/)
 
+👤 Sergio Peralta
+
+- GitHub: [@SergioPeralta22](https://github.com/SergioPeralta22)
+- Twitter: [@SePeralta22](https://twitter.com/SePeralta22)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/sergioperalta22)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
