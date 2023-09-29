@@ -11,11 +11,13 @@ default: &default
 development:
   <<: *default
   database: Final_Capstone_Backend
-
+  username: postgres
+  password: 123
 test:
   <<: *default
   database: Final_Capstone_Backend_test
-
+  username: postgres
+  password: 123
 production:
   <<: *default
   database: Final_Capstone_Backend

@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_26_140732) do
     t.string "name"
     t.string "description"
     t.string "photo"
+    t.boolean "reserved"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "price"
