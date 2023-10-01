@@ -8,7 +8,7 @@ RSpec.describe Reservation, type: :model do
 
   # Validation tests
   it "is not valid without a city" do
-    reservation = FactoryBot.build(:reservation, city: nil)
+    reservation = FactoryBot.build(:reservation, city: 'Faislabad')
     expect(reservation).not_to be_valid
   end
 
