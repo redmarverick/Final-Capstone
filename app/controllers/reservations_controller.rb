@@ -4,11 +4,14 @@ class ReservationsController < ApplicationController
   before_action :set_reserved, only: [:show, :update, :destroy]
 
   def index
-    if current_user
-      @reservations = current_user.reservations.all
-      render json: { cars_reservations: @reservations }
+    user_id = params[:user_id]
+    user = User.find_by(id: user_id)
+
+    if user
+      @reservations = user.reservations.includes(:car).all
+      render json: { cars_reservations: @reservations.as_json(include: :car) }
     else
-      render json: {message: "Please Login"}
+      render json: { message: "User not found" }, status: :not_found
     end
   end
 
