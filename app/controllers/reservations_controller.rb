@@ -17,7 +17,7 @@ class ReservationsController < ApplicationController
     if @reserved.save
       render json: { message: 'Car reserved' }
     else
-      render json: { error: @reserved.errors.full_messages }
+      render json: { error: @reserved.errors.full_messages }, status:404
     end
   end
 
@@ -29,7 +29,7 @@ class ReservationsController < ApplicationController
     if @reserved.update(reservation_params)
       render json: { message: 'Reservation updated successfully' }, status: :ok
     else
-      render json: { error: @reserved.errors.full_messages }
+      render json: { error: @reserved.errors.full_messages }, status:404
     end
   end
 
@@ -37,7 +37,7 @@ class ReservationsController < ApplicationController
     if @reserved.destroy
       render json: { message: 'Reservation deleted successfully' }
     else
-      render json: { errors: @reserved.errors.full_messages }
+      render json: { errors: @reserved.errors.full_messages }, status:404
     end
   end
 
