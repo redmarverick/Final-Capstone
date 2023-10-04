@@ -77,6 +77,7 @@ Create the database, execute the following command in Bash:
 ```sh
 rails db:create
 rails db:migrate
+rails db:seed
 ```
 
 ### Usage
@@ -104,6 +105,18 @@ To run the project tests, execute the following command:
 - GitHub: [@Javed-Shahbaz](https://github.com/Javed-Shahbaz)
 - Twitter: [@javedshahbaz007](https://twitter.com/javedshahbaz007)
 - LinkedIn: [@javedshahbaz](https://www.linkedin.com/in/javedshahbaz/)
+
+👤 **Sergio Peralta**
+
+- GitHub: [@SergioPeralta22](https://github.com/SergioPeralta22)
+- Twitter: [@SePeralta22](https://twitter.com/SePeralta22)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/sergioperalta22)
+
+👤 **Nylbert Victor**
+
+- GitHub: [@Nylbert Victor](https://github.com/redmarverick)
+- Twitter: [@Nylbert Victor](https://twitter.com/MarverickRed)
+- LinkedIn: [Nylbert Victor](https://www.linkedin.com/in/nylbert)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
