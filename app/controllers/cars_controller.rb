@@ -1,6 +1,6 @@
 class CarsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create, :show, :update, :destroy]
-  before_action :find_car, only: [:create, :show, :update, :destroy]
+  before_action :find_car, only: [:show, :update, :destroy]
 
   def index
     @cars = Car.all
@@ -16,7 +16,7 @@ class CarsController < ApplicationController
     if @car.save
       render json: { message: 'Car created successfully' }, status: :created
     else
-      render json: @car.errors, status: :unprocessable_entity
+      render json: @car.errors.full_messages, status: :unprocessable_entity
     end
   end
 
@@ -39,7 +39,7 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:name, :description, :photo, :reserved, :price)
+    params.require(:car).permit(:name, :description, :photo, :price)
   end
 
   def find_car
