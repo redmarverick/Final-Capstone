@@ -10,9 +10,9 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
-
+  post 'new-car', to: 'cars#create'
   resources :reservations, only: [:index, :create, :show, :update, :destroy]
-  resources :cars, only: [:index, :show, :create, :update, :destroy]
+  resources :cars, only: [:index, :show, :update, :destroy]
 
   root 'root#index' 
 end
