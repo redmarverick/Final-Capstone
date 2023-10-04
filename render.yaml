@@ -1,11 +1,11 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: CAR-BOOKING-APP
+    databaseName: car_booking_app
+    user: car_booking_app_user
 
 services:
   - type: web
-    name: mysite
+    name: CAR-BOOKING-APP
     runtime: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
