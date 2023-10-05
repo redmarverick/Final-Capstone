@@ -3,12 +3,22 @@ class CarsController < ApplicationController
   before_action :find_car, only: [:show, :update, :destroy]
 
   def index
-    @cars = Car.all
-    render json: @cars
+    begin
+      @cars = Car.all
+      render json: @cars
+    rescue StandardError => e
+      render json: { error: "An error occurred: #{e.message}" }, status: :unprocessable_entity
+    end
   end
 
   def show
-    render json: @car
+    begin
+      render json: @car
+    rescue ActiveRecord::RecordNotFound
+      render json: { error: 'Car not found' }, status: :not_found
+    rescue StandardError => e
+      render json: { error: "An error occurred: #{e.message}" }, status: :unprocessable_entity
+    end
   end
 
   def create
@@ -32,8 +42,14 @@ class CarsController < ApplicationController
   end
 
   def destroy
-    @car.destroy
-    render json: { message: 'Car deleted successfully' }
+    begin
+      @car.destroy
+      render json: { message: 'Car deleted successfully' }
+    rescue ActiveRecord::RecordNotFound
+      render json: { error: 'Car not found' }, status: :not_found
+    rescue StandardError => e
+      render json: { error: "An error occurred: #{e.message}" }, status: :unprocessable_entity
+    end
   end
 
   private
@@ -43,6 +59,10 @@ class CarsController < ApplicationController
   end
 
   def find_car
-    @car = Car.find(params[:id])
+    begin
+      @car = Car.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      render json: { error: 'Car not found' }, status: :not_found
+    end
   end
 end

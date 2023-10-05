@@ -25,7 +25,13 @@ class ReservationsController < ApplicationController
   end
 
   def show
-    render json: @reserved, status: :ok
+    begin
+      render json: @reserved, status: :ok
+    rescue ActiveRecord::RecordNotFound
+      render json: { error: 'Reserved item not found' }, status: :not_found
+    rescue StandardError => e
+      render json: { error: "An error occurred: #{e.message}" }, status: :unprocessable_entity
+    end
   end
 
   def update
@@ -51,6 +57,12 @@ class ReservationsController < ApplicationController
   end
 
   def set_reserved
-    @reserved = Reservation.find(params[:id])
+    begin
+      @reserved = Reservation.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      render json: { error: 'Reserved item not found' }, status: :not_found
+    rescue StandardError => e
+      render json: { error: "An error occurred: #{e.message}" }, status: :unprocessable_entity
+    end
   end
 end
